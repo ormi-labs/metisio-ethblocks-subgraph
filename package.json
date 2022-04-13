@@ -12,7 +12,7 @@
     "deploy-kovan": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/kovan-blocks",
     "deploy-goerli": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/goerli-blocks",
     "deploy-ropsten": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/ropsten-blocks",
-    "deploy:metis": "yarn build:metis && echo \"\n\" | graph deploy --node https://andromeda-graph.metis.io/rpc-metis-1088 --ipfs https://andromeda-link.metis.io 0xnodes/System11-metis subgraph-metis.yaml",
+    "deploy:metis": "yarn codegen && yarn build && echo \"\n\" | graph deploy --node https://andromeda-graph.metis.io/rpc-metis-1088 --ipfs https://andromeda-link.metis.io 0xnodes/ethereum-blocks-metis subgraph-metis.yaml",
     "deploy-poa": "graph deploy --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs/ blocklytics/poa-core-blocks"
   },
   "dependencies": {
