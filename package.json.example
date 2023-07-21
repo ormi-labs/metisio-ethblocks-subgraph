@@ -1,0 +1,15 @@
+{
+  "name": "metis-ethblocks",
+  "license": "UNLICENSED",
+  "scripts": {
+    "0xcodegen": "rm -rf src/generated && 0xgraph codegen -o src/generated",
+    "0xbuild": "0xgraph build",
+    "0xcreate": "0xgraph create metisio/ethblocks --node <HTTP://GRAPH_NODE_HOST:PORT> --access-token <API_KEY>",
+    "0xdeploy": "0xgraph deploy metisio/ethblocks --node <HTTP://GRAPH_NODE_HOST:PORT> --ipfs <HTTP://IPFS_HOST:PORT>",
+    "0xremove": "0xgraph remove metisio/ethblocks --access-token <API_KEY>"
+  },
+  "dependencies": {
+    "@0xgraph/cli": <CLI_EXACT_VERSION>,
+    "@graphprotocol/graph-ts": "0.26.0"
+  }
+}
