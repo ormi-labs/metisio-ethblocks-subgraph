@@ -25,8 +25,8 @@ pnpm 0xcreate
 pnpm 0xdeploy
 ```
 
-When a subgraph has successfully been deployed, it returns the URL to **The GraphiQL** to run queries. 
-Use _**schema.graphql**_ file to see available types to build a query. For example, those are the types: 
+When subgraph has successfully been deployed, it returns the URL to **The GraphiQL** to run queries. 
+Use _**schema.graphql**_ file to see available types to build a query. For example, with the next type structure: 
 
 ```graphql
 type Block @entity {
@@ -40,7 +40,7 @@ type Block @entity {
 }
 ```
 
-and corresponding query: 
+corresponding query might be like: 
 
 ```graphql
 query {
