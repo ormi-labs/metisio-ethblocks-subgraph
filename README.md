@@ -5,7 +5,7 @@
 cp package.json.example package.json
 ```
 
-To deploy this subgraph, go through `package.json` file first and substitute all the <placeholder>s with valid arguments.
+To deploy this subgraph, go through `package.json` file first and substitute all the placeholders with valid arguments.
 
 | placeholder | argument                                                                                                                        |
 | ------ |---------------------------------------------------------------------------------------------------------------------------------|
@@ -17,9 +17,39 @@ To deploy this subgraph, go through `package.json` file first and substitute all
 Subgraph name also can be adjusted per existing naming policy or for simpler tracing. 
 
 ```shell
-yarn
-yarn 0xcodegen
-yarn 0xbuild
-yarn 0xcreate
-yarn 0xdeploy 
+pnpm install
+
+pnpm 0xcodegen
+pnpm 0xbuild
+pnpm 0xcreate
+pnpm 0xdeploy
+```
+
+When a subgraph has successfully been deployed, it returns the URL to **The GraphiQL** to run queries. 
+Use _**schema.graphql**_ file to see available types to build a query. For example, those are the types: 
+
+```graphql
+type Block @entity {
+  id: ID!
+  number: BigInt!
+  timestamp: BigInt!
+  author: String
+  gasUsed: BigInt
+  gasLimit: BigInt
+  ...
+}
+```
+
+and corresponding query: 
+
+```graphql
+query {
+  blocks(subgraphError: deny, first: 100) {
+    number
+    timestamp
+    author
+    gasUsed
+    gasLimit
+  }
+}
 ```
